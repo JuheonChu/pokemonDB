@@ -1,0 +1,74 @@
+@charset "ISO-8859-1";
+
+.pokemon-name {
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.pokemon-explain {
+	color: #8d8d8d;
+	font-size: 15px;
+}
+
+.pokemon-price {
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.text-color-primary-dark {
+	color: #111;
+	text-transform: capitalize;
+}
+
+.section-header h1 {
+	font-size: 22px;
+}
+
+td {
+	padding: 0px;
+}
+
+.pokemon {
+	width: 24%;
+	vertical-align:top;
+	display:inline-block;
+	padding: 10px;
+	
+}
+
+.pokemon img {
+	width: 100%;
+	height:auto;
+	
+}
+
+.proList{
+	width:auto;
+	height:auto;
+	vertical-align:top;
+	margin-top:308px;
+}
+
+.proList a {
+	text-decoration: none;
+	color: black;
+}
+
+.proList a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+
+.list {
+	width: 100%;
+	display: inline-block;
+}

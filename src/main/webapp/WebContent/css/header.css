@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.header {
+	background-color: white;
+}
+
+#hd {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	height: 120px;
+	background-color: #fff;
+	box-shadow: 0 1px 20px 0px rgb(0 0 0/ 30%);
+	justify-content: space-between;
+}
+
+#hd .container {
+	margin: 0;
+}
+
+.container {
+	max-width: 1250px;
+}
+
+.flex-justify-space {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.js-mn, .btn-x {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	outline: none !important;
+}
+
+.js-mn {
+	display: none;
+	z-index: 101;
+}
+
+.no-style {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+body, input, textarea, select, button, table {
+	font-family: 'sans-serif',
+		sans-serif;
+	word-break: keep-all;
+	font-size: 16px;
+	color: #000;
+}
+
+.gnb {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 120px;
+	text-align: center;
+	border-right: 1px solid #ebebeb;
+}
+
+.page-pok .gnb>li {
+	position: relative;
+	display: inline-block;
+	border-left: 1px solid #ebebeb;
+	z-index: 1;
+}
+
+li {
+	list-style: none;
+}
+
+@media ( max-width : 1200px) {
+	.page-pok .gnb>li>a {
+		width: 190px;
+		font-size: 15px;
+	}
+}
+
+.page-pok .gnb>li>a {
+    position: relative;
+    display: flex;
+    height: 120px;
+    width: 170px;
+    padding-top: 30px;
+    margin-right: -4px;
+    border-right: 1px solid #ebebeb;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    transition: .5s;
+    -ms-flex-align: center;
+}
+
+.page-pok .gnb [class^=icon-] {
+    position: absolute;
+    top: 33px;
+    left: 50%;
+    width: 31px;
+    height: 27px;
+    background-size: contain;
+    transition: .5s;
+    transform: translateX(-50%);
+}
+
+#search .search-wrp {
+    display: flex;
+    width: 700px;
+    margin: 0 auto;
+    padding: 80px 15px;
+}
+
+.search-book .search-wrp {
+    float: none !important;
+    width: 100% !important;
+}
+
+.search-wrp input{
+	background: #0e0e0e;
+    border-radius: 0 !important;
+}
