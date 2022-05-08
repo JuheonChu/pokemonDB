@@ -66,9 +66,10 @@
 						class="icon-ball-c"></i>Pokemons</a></li>
 
 				
-					<li class="d-lg-block d-none" style = "background: url('./images/satoshi.jpg') no-repeat top left;">
-					<a href="${pageContext.request.contextPath}/PokemonController?command=trainer">
-					<i class = "icon"></i>Trainers</a></li>
+					<li id = "trainer" class="d-lg-block d-none" style = "position: relative;
+    top: -23px;">
+					<a href="${pageContext.request.contextPath}/PokemonController?command=trainer" style = "display:grid;">
+					<img src="https://img.icons8.com/color/48/000000/player-female.png"/>Trainers</a></li>
 				
 			</ul>
 		</div>
