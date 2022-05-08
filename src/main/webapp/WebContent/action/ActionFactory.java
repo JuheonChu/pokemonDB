@@ -24,7 +24,6 @@ public class ActionFactory {
 				action = new SearchAction();
 				break;
 			
-			
 		}
 		return action;
 	}

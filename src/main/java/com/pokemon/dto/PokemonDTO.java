@@ -8,14 +8,9 @@ public class PokemonDTO {
 	String type2;
 	int strength;
 	String img;
-	String color;
+	String color1;
+	String color2;
 	
-	public String getColor() {
-		return color;
-	}
-	public void setColor(String color) {
-		this.color = color;
-	}
 	public int getIdx() {
 		return idx;
 	}
@@ -31,8 +26,27 @@ public class PokemonDTO {
 	public String getType1() {
 		return type1;
 	}
+	
 	public void setType1(String type1) {
 		this.type1 = type1;
+	}
+	
+	@Override
+	public String toString() {
+		return "PokemonDTO [idx=" + idx + ", name=" + name + ", type1=" + type1 + ", type2=" + type2 + ", strength="
+				+ strength + ", img=" + img + ", color1=" + color1 + ", color2=" + color2 + "]";
+	}
+	public String getColor1() {
+		return color1;
+	}
+	public void setColor1(String color1) {
+		this.color1 = color1;
+	}
+	public String getColor2() {
+		return color2;
+	}
+	public void setColor2(String color2) {
+		this.color2 = color2;
 	}
 	public String getType2() {
 		return type2;
@@ -51,5 +65,10 @@ public class PokemonDTO {
 	}
 	public void setImg(String img) {
 		this.img = img;
+	}
+	
+	@Override
+	public int hashCode() {
+		return 1;
 	}
 }

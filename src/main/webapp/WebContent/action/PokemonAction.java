@@ -35,15 +35,7 @@ public class PokemonAction implements Action{
 		String [] colors = {"#9bcc50 50%", "#b97fc9 50%", "#fd7d24 50%", "#3dc7ef 50%", "#4592c4 50%", "#729f3f 50%", "#4c4466 50%", "#eed535 50%",
 				"#f7de3f 50%", "#d56723 50%", "#f366b9 50%", "#a38c21 50%", "#9eb7b8 50%", "#51c4e7 50%", "#7b62a3 50%", "#f16e57 50%" }; //RGB colors
 
-		for(int i = 0; i < dtoArr.size(); i++) {
-			
-			
-			PokemonDTO dto = new PokemonDTO();
-			String type1 = dto.getType1();
-			String type2 = dto.getType2();
-			
-			
-		}
+		
 		
 		
 		System.out.println(dtoArr.toString());

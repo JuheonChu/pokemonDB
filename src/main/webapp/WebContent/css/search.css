@@ -1,17 +1,17 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 
-.pokemon-name {
+.product-name {
 	color: black;
 	font-size: 15px;
 	font-weight: bold;
 }
 
-.pokemon-explain {
+.product-explain {
 	color: #8d8d8d;
 	font-size: 15px;
 }
 
-.pokemon-price {
+.product-price {
 	color: black;
 	font-size: 15px;
 	font-weight: bold;
@@ -36,25 +36,24 @@ td {
 	padding: 0px;
 }
 
-.pokemon {
-	width: 24%;
+.product {
+	width: 30%;
 	vertical-align:top;
 	display:inline-block;
 	padding: 10px;
 	
 }
 
-.pokemon img {
+.product img {
 	width: 100%;
 	height:auto;
 	
 }
 
-.proList{
+.searchList{
 	width:auto;
 	height:auto;
 	vertical-align:top;
-	margin-top:308px;
 }
 
 .proList a {
@@ -66,10 +65,3 @@ td {
 	text-decoration: none;
 	color: black;
 }
-
-
-.list {
-	width: 100%;
-	display: inline-block;
-}
-

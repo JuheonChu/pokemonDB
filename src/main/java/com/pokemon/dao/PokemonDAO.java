@@ -23,7 +23,7 @@ public class PokemonDAO {
 		Connection conn = null;
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/comp378final?charactherEncoding=UTF-8&serverTimezone=UTC", "root", "tiger");
+				"jdbc:mysql://localhost:3306/pokemon?charactherEncoding=UTF-8&serverTimezone=UTC", "root", "tiger");
 		return conn;
 	}
 
@@ -39,7 +39,7 @@ public class PokemonDAO {
 		}
 	}
 	
-	public ArrayList<PokemonDTO> selectProductDefault() {
+	public ArrayList<PokemonDTO> selectPokemonDefault() throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -48,7 +48,7 @@ public class PokemonDAO {
 		try {
 
 			conn = getConnection();
-			String sql = "SELECT * FROM pokemon WHERE";
+			String sql = "SELECT * FROM pokemon.151pokemon";
 			pstmt = conn.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
@@ -60,12 +60,15 @@ public class PokemonDAO {
 				dto.setType2(rs.getString("type2"));
 				dto.setStrength(rs.getInt("strength"));
 				dto.setImg(rs.getString("img"));
-				
+				dto.setColor1(rs.getString("color1"));
+				dto.setColor2(rs.getString("color2"));
 				pokArr.add(dto);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		closeConnection(conn, pstmt, rs);
 		return pokArr;
 	}
 	

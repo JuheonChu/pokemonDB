@@ -133,3 +133,5 @@ li {
 	background: #0e0e0e;
     border-radius: 0 !important;
 }
+
+.icon {background: url('./images/satoshi.jpg') no-repeat top left;}

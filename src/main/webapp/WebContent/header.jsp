@@ -13,30 +13,11 @@
 			$(".dark").show();
 		});
 		$(".searchBar").blur(function() {
-			this.placeholder = "검색";
+			this.placeholder = "Search";
 			$(".dark").hide();
 		});
 
-		function totsearch() {
-
-			var sword;
-			sword = $("#tsword").val();
-
-			console.log(sword)
-
-			if (sword == "") {
-				swal({
-					title : "",
-					text : "Insert words to search.",
-					timer : 1500,
-					showConfirmButton : true
-				});
-				return;
-			} else {
-				document.location.href = "/search?sword=" + sword;
-			}
-
-		}
+		
 
 		$("#tsearchbtn").click(function() {
 			$("#tsword").focus();
@@ -50,7 +31,7 @@
 
 	<header id="hd" class="page-pok">
 		<h1>
-			<a href="/"><img
+			<a href="${pageContext.request.contextPath}/index.jsp"><img
 				src="https://pokemonkorea.co.kr/img/main_logo.png" alt="pokemon"></a>
 		</h1>
 		<div class="container flex-justify-space">
@@ -81,28 +62,46 @@
 			</nav>
 			<ul id="acc">
 				<li class="d-lg-block d-none">
-				<a href="PokemonController?command=pokemon"><i
+				<a href="${pageContext.request.contextPath}/PokemonController?command=pokemon"><i
 						class="icon-ball-c"></i>Pokemons</a></li>
 
-				<li>
-					<button type="button" id="tsearchbtn" class="no-style collapsed"
-						data-toggle="collapse" data-target="#search">
-						<i class="icon-search"></i>Search
-					</button>
-				</li>
+				
+					<li class="d-lg-block d-none" style = "background: url('./images/satoshi.jpg') no-repeat top left;">
+					<a href="${pageContext.request.contextPath}/PokemonController?command=trainer">
+					<i class = "icon"></i>Trainers</a></li>
+				
 			</ul>
 		</div>
 
 		<div id="search" class="search-book bg-dark2">
 			<div class="search-wrp" style = "padding: 40px 15px;">
 			<h2 class="col-lg-1 col-12 text-wh"><img src="https://pokemonkorea.co.kr/img/icon/icon_ball_b.png" alt=""> Pokemon Book</h2>
-				<input type="text" placeholder="Search" name="tsword" id="tsword"
-					onkeypress="if(event.keyCode==13) {totsearch(); return false;}"
-					value="" style = "margin-left: 100px; margin-right: 0px;">
-				<button type="button" onclick="totsearch()"
-					class="no-style btn-search" style = "background-color:red;">
-					<p class="sr-only">Search</p>
-				</button>
+				
+				<form action="${pageContext.request.contextPath}/PokemonController?command=search" method="post" style = "display:inherit;width:100%;">
+						<input type="text" placeholder="Search"
+							onblur="this.placeholder='Search'" name="tsword" id="tsword" 
+							style = "margin-left: 100px; margin-right: 0px;"/>
+						<button type="submit" onclick=""
+						class="no-style btn-search" style = "background-color:red;">
+						
+					</button>
+						</form>
+				<!-- <div class="searchDiv">
+		
+					
+		
+				</div> -->
+				
+				<!-- <form action="../nike/ProductController?command=surf" method="post"> -->
+					
+					<!-- <input type="text" placeholder="Search" name="tsword" id="tsword"
+						onkeypress="if(event.keyCode==13) {totsearch(); return false;}"
+						value="" style = "margin-left: 100px; margin-right: 0px;">
+					<button type="button" onclick="totsearch()"
+						class="no-style btn-search" style = "background-color:red;">
+						<p class="sr-only">Search</p>
+					</button> -->
+				<!-- </form> -->
 			</div>
 		</div>
 
