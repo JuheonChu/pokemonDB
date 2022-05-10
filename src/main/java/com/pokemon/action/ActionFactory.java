@@ -29,6 +29,9 @@ public class ActionFactory {
 			case "sort":
 				action = new SortAction();
 				break;
+			case "places":
+				action = new PlaceAction();
+				break;
 			
 			
 		}

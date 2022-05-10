@@ -83,15 +83,15 @@
 				</a>
 				<%} else if(dto.hashCode() == 2){
 					TrainerDTO trainer = (TrainerDTO)dto;
-											%>
+															%>
 				
 					<a class = "search-result"> <!-- detailed page if can -->
-						<div class="trainer" style = "width: 24%;vertical-align: top;display: inline-block;padding: 10px;">
-							<img src= "<%=trainer.getImage()%>" style = "height: 300px;"><br> <span
-								class="trainer-name" style = "font-weight:bold;font-size:30px;"><%=trainer.getName() %></span><br> 
-								<input type="button" id="type" value="<%=trainer.getType() %>">
+						<div class="pokemon" style = "font-weight:bold;font-size:30px;">
+							<img src= "<%=trainer.getImage()%>"><br> <span
+								class="pokemon-name" style = "font-weight:bold;font-size:30px;"><%=trainer.getName() %></span><br> 
+								<h4 > <%= trainer.getType() %></h4>
 								
-							<h4>
+							<h4 style = "width:150%;">
 								<span style = "color:red; font-weight: bold;">pokemons</span>:
 								<%=trainer.getNum_pokemon()%>
 							</h4>

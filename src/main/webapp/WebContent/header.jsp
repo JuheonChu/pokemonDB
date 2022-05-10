@@ -39,10 +39,10 @@
 				<span></span> <span></span> <span></span>
 			</button>
 			<nav id="gnb">
-				<ul class="gnb">
+				<!-- <ul class="gnb">
 					<li class=""><a href="#" class="warning "><i
 							class="icon-news"></i>Community</a></li>
-					<!-- used as a board -->
+					used as a board
 
 
 					<li><a href="#" class="danger "><i class="icon-ball"></i>Goods</a>
@@ -58,18 +58,24 @@
 
 
 
-				</ul>
+				</ul> -->
 			</nav>
 			<ul id="acc">
-				<li class="d-lg-block d-none">
-				<a href="${pageContext.request.contextPath}/PokemonController?command=pokemon"><i
-						class="icon-ball-c"></i>Pokemons</a></li>
-
 				
-					<li id = "trainer" class="d-lg-block d-none" style = "position: relative;
-    top: -23px;">
+				<li class="d-lg-block d-none">
+					<a href="${pageContext.request.contextPath}/PokemonController?command=pokemon"><i
+						class="icon-ball-c"></i>Pokemons</a>
+				</li>
+				<li id = "trainer" class="d-lg-block d-none" style = "position: relative; top: -23px;">
 					<a href="${pageContext.request.contextPath}/PokemonController?command=pairs" style = "display:grid;">
-					<img src="https://img.icons8.com/color/48/000000/player-female.png"/>Trainers</a></li>
+					<img src="https://img.icons8.com/color/48/000000/player-female.png"/>Trainers
+					</a>
+				</li>
+				<li id = "place" class="d-lg-block d-none" style = "position: relative; top: -23px;width:30px;">
+					<a href="${pageContext.request.contextPath}/PokemonController?command=places" style = "display:grid;width:21%;">
+					<img src="${pageContext.request.contextPath}/img/place.ico"/>Places
+					</a>
+				</li>
 				
 			</ul>
 		</div>

@@ -79,18 +79,18 @@ String select = (String) request.getAttribute("select");
 				<select name="sort" id="sort" class="sort"
 					onchange="if(this.value)location.href=(this.value)">
 					<option id="default"
-						value="PokemonController?command=sort&sort=default&select=name"
+						value="PokemonController?command=sort&sort=default&select=pokemon"
 						<%
-						if("name".equals(select)) {
+						if("pokemon".equals(select)) {
 					%> selected
 						<%
 						}
-					%>>Name</option>
+					%>>default</option>
 
 					<option id="strength-desc"
 						value="PokemonController?command=sort&sort=strength-desc&select=strength-desc"
 						<%
-							if("Strength".equals(select)) {
+							if("strength-desc".equals(select)) {
 					%> selected
 						<%			
 							}
@@ -99,12 +99,22 @@ String select = (String) request.getAttribute("select");
 					<option id="strength-asc"
 						value="PokemonController?command=sort&sort=strength-asc&select=strength-asc"
 						<%
-							if("Weak".equals(select)){
+							if("strength-asc".equals(select)){
 						%> selected
 						<%		
 							}
 					
 					%>>Weak</option>
+					
+					<option id="name-asc"
+						value="PokemonController?command=sort&sort=name-asc&select=name-asc"
+						<%
+							if("name-asc".equals(select)){
+						%> selected
+						<%		
+							}
+					
+					%>>Name</option>
 				</select>
 			</div>
 

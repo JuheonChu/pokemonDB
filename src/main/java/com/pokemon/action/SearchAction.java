@@ -49,6 +49,7 @@ public class SearchAction implements Action {
 			rd.forward(request, response);
 		}else {
 			searchRes += search;
+			System.out.println(res.size());
 			request.setAttribute("pokemon", pok);
 			request.setAttribute("trainers", trainers);
 			request.setAttribute("res", res);

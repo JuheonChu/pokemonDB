@@ -41,8 +41,10 @@ public class SortAction implements Action{
 		}else if(sort.equals("default")){
 			pokemon = dao.selectPokemonDefault();
 //			out.println("<script>$('#price-asc').setAttribute('selected');</script>");
+		}else if(sort.equals("name-asc")) {
+			pokemon = dao.selectPokemonByName();
 		}
-		//System.out.println("Sort Action 클래스에서 product: " + product);
+
 		request.setAttribute("pokemon", pokemon);
 		request.setAttribute("select", select);
 
