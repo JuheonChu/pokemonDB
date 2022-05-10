@@ -71,7 +71,7 @@
 					<img src="https://img.icons8.com/color/48/000000/player-female.png"/>Trainers
 					</a>
 				</li>
-				<li id = "place" class="d-lg-block d-none" style = "position: relative; top: -23px;width:30px;">
+				<li id = "place" class="d-lg-block d-none" style = "position: relative; top: -15px;width:30px;">
 					<a href="${pageContext.request.contextPath}/PokemonController?command=places" style = "display:grid;width:21%;">
 					<img src="${pageContext.request.contextPath}/img/place.ico"/>Places
 					</a>

@@ -75,21 +75,23 @@ String select = (String) request.getAttribute("select");
 				<li class="proList">
 					<%
 					for (int i = 0; i < places.size(); i++) {
-						PlaceDTO dto = places.get(i);
+						PlaceDTO place = places.get(i);
 						
 						
 					%> 
-					<a> <!-- detailed page -->
-					<div style = "display:inline-flex;">
-						<div class="pokemon">
-							<img src="<%=dto.getImg()%>" /><br />
-							<h4><%= dto.getName() %></h4>
-						</div>
-						<div>
-							<h5 style = "font-weight:bold;text-align:center;">Description </h5><br/>
-							<span style = "text-align:center;"><%= dto.getDescription()%></span>
-						</div>
-				</div></a> <%
+					 <a class="search-result"> <!-- detailed page if can -->
+					<div class="pokemon" style="font-weight: bold; font-size: 30px;">
+						<img src="<%=place.getImg()%>"><br> <span
+							class="pokemon-name" style="font-weight: bold; font-size: 30px;"><%=place.getName()%></span><br>
+						<h4>
+							<%=place.getName()%>(<%= place.getId()%>)</h4>
+
+						<h5 style="width: 100%;">
+							<span style="font-weight:600;">Description</span>:
+							<%=place.getDescription()%>
+						</h5>
+					</div>
+			</a> <%
  	} //end of the for loop
  %>
 				</li>

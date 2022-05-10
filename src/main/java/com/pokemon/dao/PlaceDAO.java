@@ -48,7 +48,12 @@ public class PlaceDAO {
 		try {
 
 			conn = getConnection();
+			
+			
 			String sql = "SELECT * FROM pokemon.places";
+			
+			
+			
 			pstmt = conn.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();

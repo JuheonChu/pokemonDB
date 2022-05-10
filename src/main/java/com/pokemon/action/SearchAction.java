@@ -28,10 +28,12 @@ public class SearchAction implements Action {
 		
 		ArrayList<PokemonDTO> pok = new ArrayList<PokemonDTO>();
 		ArrayList<TrainerDTO> trainers = new ArrayList<>();
+		ArrayList<PlaceDTO> places = new ArrayList<>();
 		
 		
-		pok =  sd.searchPokemon(search); // nullpointerexception
+		pok =  sd.searchPokemon(search); 
 		trainers = sd.selectTrainers(search);
+		places = sd.searchPlaces(search);
 		
 		for(int i = 0; i < pok.size(); i++) {
 			res.add(pok.get(i));
@@ -40,6 +42,10 @@ public class SearchAction implements Action {
 		
 		for(int i = 0; i < trainers.size(); i++) {
 			res.add(trainers.get(i));
+		}
+		
+		for(int i = 0; i < places.size(); i++) {
+			res.add(places.get(i));
 		}
 		
 		if(res.size() == 0) {
@@ -52,6 +58,7 @@ public class SearchAction implements Action {
 			System.out.println(res.size());
 			request.setAttribute("pokemon", pok);
 			request.setAttribute("trainers", trainers);
+			request.setAttribute("places", places);
 			request.setAttribute("res", res);
 			request.setAttribute("search",searchRes);
 			RequestDispatcher rd = request.getRequestDispatcher("/search.jsp");

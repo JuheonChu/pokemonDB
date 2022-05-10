@@ -117,5 +117,41 @@ public class SearchDAO {
 	}
 	
 	
+	public ArrayList<PlaceDTO> searchPlaces(String search) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		ArrayList<PlaceDTO> placesRes = new ArrayList<>(); 
+
+		try {
+			conn = getConnection();
+
+			String sql = "SELECT * FROM pokemon.places WHERE `name` LIKE ?"
+					+ "OR `description` LIKE ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%" + search + "%");
+			pstmt.setString(2, "%" + search + "%");
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				PlaceDTO dto = new PlaceDTO();
+				dto.setDescription(rs.getString("description"));
+				dto.setId(rs.getString("id"));
+				dto.setImg(rs.getString("img"));
+				dto.setName(rs.getString("name"));
+				placesRes.add(dto);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return placesRes;
+	}
+	
 	
 }
