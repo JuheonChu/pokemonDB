@@ -48,7 +48,7 @@ public class PokemonDAO {
 		try {
 
 			conn = getConnection();
-			String sql = "SELECT * FROM pokemon.151pokemon";
+			String sql = "SELECT * FROM pokemon.151pokemon pok ORDER by pok.name ASC";
 			pstmt = conn.prepareStatement(sql);
 			
 			rs = pstmt.executeQuery();
@@ -73,7 +73,72 @@ public class PokemonDAO {
 	}
 	
 	
+	public ArrayList<PokemonDTO> selectPokemonByStrongest() throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<PokemonDTO> pokArr = new ArrayList<PokemonDTO>();
+		PokemonDTO dto = null;
+		try {
 
+			conn = getConnection();
+			String sql = "SELECT * FROM pokemon.151pokemon pok ORDER by pok.strength DESC";
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dto = new PokemonDTO();
+				dto.setIdx(rs.getInt("idx"));
+				dto.setName(rs.getString("name"));
+				dto.setType1(rs.getString("type1"));
+				dto.setType2(rs.getString("type2"));
+				dto.setStrength(rs.getInt("strength"));
+				dto.setImg(rs.getString("img"));
+				dto.setColor1(rs.getString("color1"));
+				dto.setColor2(rs.getString("color2"));
+				pokArr.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		closeConnection(conn, pstmt, rs);
+		return pokArr;
+	}
+	
+	
+	public ArrayList<PokemonDTO> selectPokemonByWeakest() throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<PokemonDTO> pokArr = new ArrayList<PokemonDTO>();
+		PokemonDTO dto = null;
+		try {
+
+			conn = getConnection();
+			String sql = "SELECT * FROM pokemon.151pokemon pok ORDER by pok.strength ASC";
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				dto = new PokemonDTO();
+				dto.setIdx(rs.getInt("idx"));
+				dto.setName(rs.getString("name"));
+				dto.setType1(rs.getString("type1"));
+				dto.setType2(rs.getString("type2"));
+				dto.setStrength(rs.getInt("strength"));
+				dto.setImg(rs.getString("img"));
+				dto.setColor1(rs.getString("color1"));
+				dto.setColor2(rs.getString("color2"));
+				pokArr.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		closeConnection(conn, pstmt, rs);
+		return pokArr;
+	}
 
 	
 }

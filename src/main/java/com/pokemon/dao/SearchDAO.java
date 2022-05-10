@@ -80,33 +80,30 @@ public class SearchDAO {
 		return pokRes;
 	}
 	
-	public ArrayList<TrainersDTO> selectTrainers(String search) {
+	public ArrayList<TrainerDTO> selectTrainers(String search) throws SQLException {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		ArrayList<TrainersDTO> sb = new ArrayList<TrainersDTO>(); // 상품목록들
-
+		ArrayList<TrainerDTO> sb = new ArrayList<>(); 
 		try {
 			conn = getConnection();
 
-			String sql = "SELECT * FROM pokemon.151pokemon WHERE `name` LIKE ?";
+			String sql = "SELECT * FROM pokemon.trainers WHERE `name` LIKE ? OR `type` LIKE ?";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + search + "%");
+			pstmt.setString(2, "%" + search + "%");
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 
-				TrainersDTO temp = new TrainersDTO();
-				/*
-				 * temp.setType(rs.getString("type")); temp.setPnum(rs.getInt("pnum"));
-				 * temp.setName(rs.getString("name"));
-				 * 
-				 * temp.setPrice(rs.getInt("price")); temp.setExplain(rs.getString("explain"));
-				 * temp.setDetailexplain(rs.getString("detailexplain"));
-				 * temp.setImg(rs.getString("img")); temp.setGender(rs.getString("gender"));
-				 */
+				TrainerDTO temp = new TrainerDTO();
+				temp.setId(rs.getInt("id"));
+				temp.setName(rs.getString("name"));
+				temp.setNum_pokemon(rs.getInt("num_pokemon"));
+				temp.setType(rs.getString("type"));
+				temp.setImage(rs.getString("image"));
 				sb.add(temp);
 			}
 			
@@ -114,6 +111,8 @@ public class SearchDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		closeConnection(conn, pstmt, rs);
 		return sb;
 	}
 	

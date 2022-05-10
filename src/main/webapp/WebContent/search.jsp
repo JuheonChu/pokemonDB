@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.pokemon.dto.PokemonDTO"%>
-<%@ page import="com.pokemon.dto.TrainersDTO"%>
+<%@ page import="com.pokemon.dto.TrainerDTO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.pokemon.dao.SearchDAO"%>
 
@@ -12,6 +12,7 @@
 <meta charset="UTF-8">
 <jsp:include page="./includeFile.jsp" />
 <link rel="stylesheet" type="text/css" href="./css/pokemon.css"  />
+
 <title>Search Results:</title>
 <style>
 .search-text {
@@ -80,7 +81,23 @@
 								<%=poke.getStrength() %></h4>
 						</div>
 				</a>
-				<%} //end of the if-loop
+				<%} else if(dto.hashCode() == 2){
+					TrainerDTO trainer = (TrainerDTO)dto;
+											%>
+				
+					<a class = "search-result"> <!-- detailed page if can -->
+						<div class="trainer" style = "width: 24%;vertical-align: top;display: inline-block;padding: 10px;">
+							<img src= "<%=trainer.getImage()%>" style = "height: 300px;"><br> <span
+								class="trainer-name" style = "font-weight:bold;font-size:30px;"><%=trainer.getName() %></span><br> 
+								<input type="button" id="type" value="<%=trainer.getType() %>">
+								
+							<h4>
+								<span style = "color:red; font-weight: bold;">pokemons</span>:
+								<%=trainer.getNum_pokemon()%>
+							</h4>
+						</div>
+				</a>
+				<%} //end of the else-if
 					} //end of the for-loop %>
 			</li>
 			

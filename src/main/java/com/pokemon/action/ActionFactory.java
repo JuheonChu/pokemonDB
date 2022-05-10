@@ -23,6 +23,12 @@ public class ActionFactory {
 			case "search":
 				action = new SearchAction();
 				break;
+			case "pairs":
+				action = new PairsAction();
+				break;
+			case "sort":
+				action = new SortAction();
+				break;
 			
 			
 		}

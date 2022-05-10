@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="com.pokemon.dto.PokemonDTO"%>
-<%@ page import="com.pokemon.dto.TrainersDTO"%>
+<%@ page import="com.pokemon.dto.TrainerDTO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.pokemon.dao.SearchDAO"%>
 

@@ -25,7 +25,7 @@
 	});
 </script>
 
-
+<title>Pokemon</title>
 </head>
 <body>
 
@@ -68,7 +68,7 @@
 				
 					<li id = "trainer" class="d-lg-block d-none" style = "position: relative;
     top: -23px;">
-					<a href="${pageContext.request.contextPath}/PokemonController?command=trainer" style = "display:grid;">
+					<a href="${pageContext.request.contextPath}/PokemonController?command=pairs" style = "display:grid;">
 					<img src="https://img.icons8.com/color/48/000000/player-female.png"/>Trainers</a></li>
 				
 			</ul>

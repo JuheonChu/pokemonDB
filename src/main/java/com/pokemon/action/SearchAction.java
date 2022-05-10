@@ -27,7 +27,7 @@ public class SearchAction implements Action {
 		
 		
 		ArrayList<PokemonDTO> pok = new ArrayList<PokemonDTO>();
-		ArrayList<TrainersDTO> trainers = new ArrayList<TrainersDTO>();
+		ArrayList<TrainerDTO> trainers = new ArrayList<>();
 		
 		
 		pok =  sd.searchPokemon(search); // nullpointerexception
